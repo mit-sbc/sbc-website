@@ -337,11 +337,20 @@ a.card:hover { text-decoration: none; }
 .newsletter-pages { display: grid; gap: 1.5rem; }
 .newsletter-pages img { width: 100%; border: 1px solid var(--line); border-radius: var(--radius-sm); }
 
-/* --- Gallery (masonry: natural image heights, flowed into columns) -------- */
+/* --- Gallery (masonry; captions slide up on hover) ------------------------ */
 .gallery { columns: 3; column-gap: 1.25rem; }
-.gallery figure { break-inside: avoid; margin: 0 0 1.25rem; }
-.gallery img { width: 100%; height: auto; border-radius: var(--radius); background: var(--paper-alt); }
-.gallery figcaption { margin-top: .6rem; font-size: .9rem; color: var(--muted); line-height: 1.45; }
+.gallery figure { position: relative; break-inside: avoid; margin: 0 0 1.25rem; border-radius: var(--radius); overflow: hidden; background: var(--paper-alt); }
+.gallery img { width: 100%; height: auto; display: block; transition: transform .6s cubic-bezier(.22,.61,.36,1); }
+.gallery figure:hover img { transform: scale(1.03); }
+.gallery figcaption {
+  position: absolute; inset: auto 0 0 0; padding: 2.25rem 1.1rem 1rem;
+  color: #fff; font-size: .9rem; line-height: 1.45;
+  background: linear-gradient(180deg, rgba(7,29,59,0) 0%, rgba(7,29,59,.78) 100%);
+  opacity: 0; transform: translateY(8px); transition: opacity .3s ease, transform .3s ease;
+}
+.gallery figure:hover figcaption, .gallery figure:focus-within figcaption { opacity: 1; transform: none; }
+.gallery figcaption:empty { display: none; }
+@media (hover: none) { .gallery figcaption { opacity: 1; transform: none; } }
 @media (max-width: 900px) { .gallery { columns: 2; } }
 @media (max-width: 560px) { .gallery { columns: 1; } }
 
@@ -450,3 +459,13 @@ a.card:hover { text-decoration: none; }
 .apply-box h3 { margin-bottom: .3rem; font-size: 1.25rem; }
 .apply-box p { color: var(--muted); max-width: 620px; }
 .apply-box .btn { flex: none; }
+
+/* --- Placements ticker ----------------------------------------------------- */
+.ticker-wrap { overflow: hidden; }
+.ticker-wrap .eyebrow { margin-bottom: .9rem; }
+.ticker-wrap .link-arrow { display: inline-block; margin-top: 1rem; }
+.marquee--text { padding-block: .25rem; }
+.marquee__track--text { gap: 0; align-items: center; animation-duration: 90s; animation-direction: reverse; }
+.ticker__item { display: inline-flex; align-items: center; white-space: nowrap; padding-right: 2.25rem; font-family: var(--font-display); font-size: clamp(1.5rem, 2.6vw, 2.1rem); font-weight: 600; color: var(--navy-ink); }
+.ticker__item::after { content: ""; display: inline-block; width: 9px; height: 9px; margin-left: 2.25rem; background: var(--sky); transform: rotate(45deg); border-radius: 1px; }
+@media (prefers-reduced-motion: reduce) { .marquee--text { overflow-x: auto; } }

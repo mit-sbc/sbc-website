@@ -1,6 +1,6 @@
 # Sloan Business Club website
 
-Static rebuild of [mitsbc.org](https://www.mitsbc.org) in plain HTML, CSS, and a few lines of JavaScript. No framework, no build step. Google Fonts (Inter, Playfair Display) is the only external dependency.
+Static rebuild of [mitsbc.org](https://www.mitsbc.org) in plain HTML, CSS, and a few lines of JavaScript. No framework, no build step. Google Fonts (Fraunces, DM Sans) is the only external dependency.
 
 ## Preview locally
 
@@ -52,7 +52,11 @@ Every page carries the same header and footer markup. When you change the nav or
 
 **Edit the member photo strip** (`index.html`): the scrolling strip is `.marquee__track`. The photos are listed twice in a row so the loop is seamless; add or remove a `<figure>` in both copies. Strip images are small copies in `assets/photos/thumbs/` (about 900px wide) so the strip loads fast.
 
-**Change colors or fonts**: edit the variables in the `:root` block at the top of `css/styles.css`. `--navy` and `--sky` come from the SBC logo.
+**Change colors or fonts**: edit the variables in the `:root` block at the top of `css/styles.css`. The palette is white with near-black ink; `--navy` and `--sky` come from the SBC logo and are used for links, accents, and the dark section.
+
+**Placements on the home page** are grouped by sector in `index.html` (`.placements__grid`). The Board page holds the flat list; keep the two in sync when adding a firm.
+
+**Alumni quotes** on the home page (`.quotes`) are verbatim lines from the Edge interviews. Swap a quote by editing the blockquote text, name, role, and link.
 
 ## Deploying
 

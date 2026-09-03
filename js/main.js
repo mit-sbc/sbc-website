@@ -11,7 +11,7 @@
   var HERO = '.hero .container > *';
   var GROUPS = [
     '.section-head', '.grid > *', '.people > *', '.logo-wall__item', '.stats > *', '.steps > *',
-    '.post-list > *', '.gallery > figure', '.contact-cards > *', '.chips', '.name-grid', '.accordion', '.tl > *', '.apply-box', '.sponsor-note',
+    '.post-list > *', '.gallery > figure', '.contact-cards > *', '.chips', '.name-grid', '.accordion', '.tl > *', '.apply-box', '.sponsor-note', '.placements__col', '.quote',
     '.people-group__title', '.cta > *', '.feature > *', '.article > *', '.newsletter-pages > *',
     '.section > .container > .btn-row', '.section > .container > p', '.section > .container > h2',
     '.section > .container--narrow > *'

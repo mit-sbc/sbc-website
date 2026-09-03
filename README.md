@@ -4,11 +4,15 @@ Static rebuild of [mitsbc.org](https://www.mitsbc.org) in plain HTML, CSS, and a
 
 ## Preview locally
 
+Internal links are extensionless (`/board`, not `/board.html`) because GitHub Pages resolves those automatically. For a local preview use a server that does the same:
+
 ```bash
 cd sbc-website
-python3 -m http.server 8080
-# open http://localhost:8080
+npx serve .
+# open the URL it prints
 ```
+
+(`python3 -m http.server` and opening the files directly will 404 on the extensionless links.)
 
 ## Layout
 

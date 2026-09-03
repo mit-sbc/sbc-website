@@ -85,12 +85,13 @@
   });
 
   // Current-page highlighting: compare the last path segment of each link with the page.
-  var here = location.pathname.replace(/\/index\.html$/, '/').replace(/\/$/, '/index.html');
-  var hereFile = here.split('/').pop();
+  // Links are extensionless (GitHub Pages serves /board for board.html); tolerate both forms.
+  var norm = function (p) { return (p.split('#')[0].split('?')[0].split('/').pop() || 'index').replace(/\.html$/, ''); };
+  var hereFile = norm(location.pathname);
   var inEdge = /\/edge\//.test(location.pathname);
   header.querySelectorAll('.nav a[href]').forEach(function (a) {
-    var file = a.getAttribute('href').split('/').pop().split('#')[0] || 'index.html';
-    var match = file === hereFile || (inEdge && /edge\.html$/.test(a.getAttribute('href')));
+    var file = norm(a.getAttribute('href'));
+    var match = file === hereFile || (inEdge && file === 'edge');
     if (match) {
       a.setAttribute('aria-current', 'page');
       var parent = a.closest('li.has-menu');

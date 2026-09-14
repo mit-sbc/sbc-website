@@ -52,7 +52,7 @@ Every page carries the same header and footer markup. When you change the nav or
 
 **Turn off the reveal animation**: delete the first block in `js/main.js` (the one that adds the `reveal` class). It already switches itself off for visitors who have "reduce motion" enabled.
 
-**Update recruitment** (`join.html`): the SBC Week schedule is an `<ol class="tl">` with one `<li class="tl__item">` per event (day, date, time, title, blurb, room). Dates appear in the hero, the schedule heading, the timeline, the four steps, and the application box, so search the file for the month name when a new year rolls around. When the application form goes live, replace the mailing-list link in the `apply-box` with the form URL and change the button text to "Apply now" (there is an HTML comment marking the spot).
+**Update recruitment** (`join.html`): the SBC Week schedule is an `<ol class="tl">` with one `<li class="tl__item">` per event (day, date, time, title, blurb, room). Dates appear in the hero, the schedule heading, the timeline, the four steps, and the application box, so search the file for the month name when a new year rolls around. The application form URL appears in the hero button, the timeline deadline, step four, and the `apply-box`; the home page hero also carries an "applications are open" notice (`.hero__notice`) linking to it. When recruitment closes, remove that notice and point the `apply-box` button back at the mailing list.
 
 **Edit the member photo strip** (`index.html`): the scrolling strip is `.marquee__track`. The photos are listed twice in a row so the loop is seamless; add or remove a `<figure>` in both copies. Strip images are small copies in `assets/photos/thumbs/` (about 900px wide) so the strip loads fast.
 

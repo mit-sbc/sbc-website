@@ -305,6 +305,10 @@ a.card:hover { text-decoration: none; }
 .accordion details[open] summary::after { content: "\2212"; }
 .accordion .name-grid { padding: .25rem .25rem 1.5rem; }
 .accordion .name-grid li { border: 0; padding: .25rem 0; }
+.accordion--faq summary { font-size: 1.25rem; padding: 1.15rem .25rem; }
+.accordion__body { padding: 0 .25rem 1.5rem; max-width: 720px; }
+.accordion__body p { color: var(--muted); }
+.accordion__body > :last-child { margin-bottom: 0; }
 
 /* --- Stats & chips -------------------------------------------------------- */
 .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }

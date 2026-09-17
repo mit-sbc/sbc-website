@@ -216,6 +216,32 @@ strong { font-weight: 600; }
 .hero--plain .lede { color: var(--muted); opacity: 1; }
 .hero--plain .eyebrow { color: var(--navy); }
 
+/* --- Home resume resources ------------------------------------------------ */
+.resume-callout { padding-block: clamp(2.5rem, 5vw, 4rem); background: var(--sky-soft); border-bottom: 1px solid #d4e2f2; }
+.resume-callout__head { display: flex; align-items: end; justify-content: space-between; gap: 1.5rem 3rem; max-width: none; margin-bottom: 1.5rem; }
+.resume-callout__head > div { max-width: 680px; }
+.resume-callout__head .eyebrow { margin-bottom: .65rem; }
+.resume-callout__head h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); margin-bottom: .3rem; }
+.resume-callout__head p { margin: 0; color: var(--ink-soft); }
+.resume-callout__head .link-arrow { flex: none; }
+.resume-callout__grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.resume-link {
+  display: flex; align-items: center; gap: .9rem; min-width: 0; padding: 1.15rem;
+  background: rgba(255,255,255,.82); border: 1px solid rgba(15,54,107,.14); border-radius: var(--radius);
+  color: var(--ink); transition: background var(--ease), border-color var(--ease), box-shadow var(--ease), transform var(--ease);
+}
+.resume-link:hover { background: #fff; border-color: rgba(15,54,107,.3); box-shadow: var(--shadow); transform: translateY(-2px); text-decoration: none; }
+.resume-link__icon { display: grid; place-items: center; flex: none; width: 42px; height: 42px; border-radius: var(--radius-sm); background: var(--navy); color: #fff; }
+.resume-link__icon svg { width: 21px; height: 21px; }
+.resume-link__copy { min-width: 0; line-height: 1.35; }
+.resume-link__copy strong, .resume-link__copy span { display: block; }
+.resume-link__copy strong { font-size: .95rem; }
+.resume-link__copy span { margin-top: .15rem; color: var(--muted); font-size: .78rem; }
+.resume-link__arrow { flex: none; margin-left: auto; color: var(--navy); font-size: 1.15rem; transition: transform var(--ease); }
+.resume-link:hover .resume-link__arrow { transform: translateX(3px); }
+@media (max-width: 900px) { .resume-callout__grid { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .resume-callout__head { align-items: start; flex-direction: column; } }
+
 /* Editorial home hero: type on paper, photo bleeding to the right */
 .hero--editorial { display: block; min-height: 0; padding-block: clamp(3rem, 7vw, 6rem) 0; text-align: left; color: var(--ink); background: var(--paper); }
 .hero--editorial::before, .hero--editorial::after { display: none; }
